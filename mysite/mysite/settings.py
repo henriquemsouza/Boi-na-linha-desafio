@@ -23,7 +23,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '2%n1%vd440#&j2spc72@7pf%yu)!&_srrh7ew!%=x3d-&3g2t9'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+#DEBUG = True
+DEBUG = bool( os.environ.get('DJANGO_DEBUG', True))
 
 ALLOWED_HOSTS = [*]
 
@@ -88,7 +89,7 @@ DATABASES = {
      'USER': 'wgxgfesfpxerhp',
     'PASSWORD': 'debeab0939f43bfe1bc2469f7f8dd5d3426e6829105987fb0f7b683fa82bf1ef',
     'HOST': 'ec2-54-221-221-153.compute-1.amazonaws.com',
-      'PORT': '', # 8000 is default
+      'PORT': '5432', # 8000 is default
 
     }
 }
@@ -148,8 +149,7 @@ import dj_database_url
 db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(db_from_env)
 
-#
-STATICFILES_STORAGE='whitenoise.django.GzipManifestStaticFilesStorage'
+#STATICFILES_STORAGE='whitenoise.django.GzipManifestStaticFilesStorage'
 
 
 STATIC_URL = '/static/'
