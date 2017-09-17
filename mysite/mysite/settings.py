@@ -33,13 +33,13 @@ ALLOWED_HOSTS = [*]
 
 INSTALLED_APPS = [
     'django_tables2',
-    'boi',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'boi',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
 ]
@@ -138,7 +138,7 @@ STATIC_URL = '/static/'
 
 # Extra places for collectstatic to find static files.
 STATICFILES_DIRS = (
-    os.path.join(PROJECT_ROOT, '../boi/static'),
+    os.path.join(PROJECT_ROOT, '/static'),
 )
 
 
