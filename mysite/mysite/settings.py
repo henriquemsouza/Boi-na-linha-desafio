@@ -25,7 +25,7 @@ SECRET_KEY = '2%n1%vd440#&j2spc72@7pf%yu)!&_srrh7ew!%=x3d-&3g2t9'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [*]
 
 
 # Application definition
@@ -148,8 +148,8 @@ import dj_database_url
 db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(db_from_env)
 
-
-
+#
+STATICFILES_STORAGE='whitenoise.django.GzipManifestStaticFilesStorage'
 
 
 STATIC_URL = '/static/'
