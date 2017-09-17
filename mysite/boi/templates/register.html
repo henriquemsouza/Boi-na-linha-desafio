@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+            {% block title %}<title>Boi na  linha</title>{% endblock %}
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+           
+         
+            {% block head%}
+            {% endblock %}
+            {% load staticfiles %}
+            <link rel="stylesheet"  type="text/css" href="{% static 'boiEstilo/style.css' %}" />
+
+
+        <title>register | boi</title>
+    </head>
+    {% load static %}
+    <body>
+            <ul>
+                    <li><a class="active" href="{% url 'index' %}">Home</a></li>
+                    <li><a href="{% url 'login' %}" >Logar</a></li>
+                    <li><a href="{% url 'register' %}">Cadastro</a></li>
+                    <li><a href="{% url 'about' %}">About</a></li>
+            </ul>
+
+
+        <h1>Register</h1>
+<div class = "msgOne">
+    <br>
+        {% if registered %}
+        Success: <strong>thank you for registering!</strong>
+        <a href="{% url 'index' %}>"Return to the homepage.</a><br />
+        {% else %}
+        Hello: <strong>register here!</strong><br />
+        <br>
+<div>
+
+        <form id="user_form" method="post" action="{% url "register" %}"  enctype="multipart/form-data">
+
+            {% csrf_token %}
+
+            <!-- Display each form. The as_p method wraps each element in a paragraph
+                 (<p>) element. This ensures each element appears on a new line,
+                 making everything look neater. -->
+            {{ user_form.as_p }}
+            {{ profile_form.as_p }}
+
+            <!-- Provide a button to click to submit the form. -->
+            <input type="submit" name="submit" value="Register" />
+            
+        </form>
+        {% endif %}
+        <br>
+    </body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+            {% block title %}<title>Listar marcadoria |  Boi</title>{% endblock %}
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+           
+         
+            {% block head%}
+            {% endblock %}
+            {% load staticfiles %}
+            <link rel="stylesheet"  type="text/css" href="{% static 'boiEstilo/style.css' %}" />
+
+            {% load render_table from django_tables2 %}
+        
+    </head>
+    {% load static %}
+    <body>
+            <ul>
+                    <li><a class="active" href="{% url 'index' %}">Home</a></li>
+                    <li><a href="{% url 'login' %}" >Logar</a></li>
+                    <li><a href="{% url 'register' %}">Cadastro</a></li>
+                    <li><a href="{% url 'about' %}">About</a></li>
+            </ul>
+<br>
+{% if user.is_authenticated %}
+
+<table style="width:50%">
+        <tr>
+          <th>
+                <div>
+                        <a href="{% url 'AddMercadoria' %}" >
+                               <button class="button button4" >Nova mercadoria</button>
+                        </a>
+                </div>
+
+          </th>
+          <th>
+                <div>
+                        <a  href="{% url 'logout' %}" >
+                              <button class="button button3" >Logout</button>
+                        </a>
+                </div> 
+          </th> 
+        </tr>  
+      </table>
+<br>
+
+
+<div class = "madelist">
+        {% render_table mercadoria %}
+</div>
+
+
+
+{% else %}
+<div class = "newItemMsg">
+<h2>Entre na sua conta para poder adicionar novas mercadorias e ver todo conteudo</h2>
+</div>
+{% endif %}
+
+
+
+    </body>
+</html>
