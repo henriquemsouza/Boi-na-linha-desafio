@@ -1,6 +1,7 @@
 astroid==1.5.3
 backports.functools-lru-cache==1.4
 configparser==3.5.0
+dj-database-url==0.4.2
 Django==1.9
 django-tables2==1.11.0
 enum34==1.1.6
@@ -14,4 +15,5 @@ psycopg2==2.7.3.1
 pylint==1.7.2
 singledispatch==3.4.0.3
 six==1.10.0
+whitenoise==3.3.0
 wrapt==1.10.11
