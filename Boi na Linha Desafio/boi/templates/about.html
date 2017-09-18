@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+   {% block title %}<title>About</title>{% endblock %}
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+   {% block head%}
+   {% endblock %}
+   {% load staticfiles %}
+   <link rel="stylesheet"  type="text/css" href="{% static 'boiEstilo/style.css' %}" />
+</head>
+{% load static %}
+<body>
+        <ul>
+                <li><a class="active" href="{% url 'index' %}">Home</a></li>
+                <li><a href="{% url 'login' %}" >Logar</a></li>
+                <li><a href="{% url 'register' %}">Cadastro</a></li>
+                <li><a href="{% url 'about' %}">About</a></li>
+        </ul>
+    <div class = "aboutH">
+      <h2>O que é esse site?</h2>
+    </div>
+    <div class = "aboutM">
+        <h3>Esse site é um desafio técnico proposto pela <strong>Boi da Linha</strong>.</h3>
+        <h3>Site desenvolvido por Henrique martins de souza.</h3>
+    </div>
+    <table style="width:80%">
+        <tr>
+          <th>
+                <div class = "aboutT">
+                       <h3>Para saber sobre Henrique</h3>
+                </div>
+
+          </th>
+          <th>
+                <div>
+                        <a href="https://henriquemsouza.github.io"target="_blank" >
+                              <button class="button buttonA" >Saiba mais</button>
+                        </a>
+                </div> 
+          </th> 
+        </tr>  
+      </table>
+<br>
+</body>
+</html>
