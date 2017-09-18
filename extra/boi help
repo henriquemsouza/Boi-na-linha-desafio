@@ -1,0 +1,44 @@
+virtualenv /home/henrique/Documentos/vENVS/boienv/ -p python2.7
+source /home/henrique/Documentos/vENVS/boienv/bin/activate
+pip install Django==1.9
+
+django-admin startproject mysite 
+cd mysite 
+python manage.py startapp boi
+python manage.py migrate
+python manage.py makemigrations
+python manage.py migrate
+python manage.py createsuperuser
+python manage.py runserver
+
+pip install django-tables2
+pip install psycopg2 django
+pip freeze
+pip freeze > requirements.txt
+
+
+createdb mydb
+createuser -P myuser
+pass 12345678
+
+acess
+psql mydb
+
+ comando a seguir define direito de acesso ao novo usuário.
+GRANT ALL PRIVILEGES ON DATABASE mydb TO myuser;
+
+\q
+
+
+_
+
+heroku create boi-na-linha
+git remote add origin https://boi-na-linha.herokuapp.com/ | https://git.heroku.com/boi-na-linha.git
+git remote add origin https://git.heroku.com/boi-na-linha.git
+heroku git:remote -a
+
+
+
+
+heroku create
+
